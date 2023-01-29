@@ -3,9 +3,14 @@ const { connection } = require("./Config/db")
 const { userRouter } = require("./routes/user.routes")
 const { noteRoutes } = require("./routes/note.Routes")
 const { authenticate } = require("./Middlewares/authenticate.middleware")
+const cors=require("cors")
+
 
 const app = express()
 app.use(express.json())
+app.use(cors({
+    origin:"*"
+}))
 
 app.get("/", (req, res) => {
     res.send("This is homepage")

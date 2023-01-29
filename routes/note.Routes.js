@@ -9,7 +9,6 @@ noteRoutes.get("/", async (req, res) => {
     res.send(notes)
     console.log(notes)
 })
-
 noteRoutes.post("/create", async (req, res) => {
     const payload = req.body
     try {
